@@ -1,5 +1,14 @@
 {
+  "name": "discord-bots",
+  "version": "1.0.0",
+  "description": "Two Discord bots in one project",
+  "main": "syfm.js",
+  "scripts": {
+    "start:syfm": "node syfm.js",
+    "start:bot": "node bot.js"
+  },
   "dependencies": {
-    "discord.js": "^14.24.2"
+    "discord.js": "^14.24.2",
+    "dotenv": "^16.6.1"
   }
 }
