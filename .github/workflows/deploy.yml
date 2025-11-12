@@ -1,0 +1,27 @@
+name: Deploy to Railway
+
+on:
+  push:
+    branches:
+      - main  # or your default branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 24
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Railway Deploy
+        uses: bervProject/railway-deploy@0.1.2-beta
+        with:
+          railwayToken: ${{ secrets.RAILWAY_TOKEN }}
+          projectId: 3a98829c-2b06-4246-baad-898b38eb2db4
